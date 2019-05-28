@@ -2,6 +2,7 @@ package com.gysoft.springboothello.controlller;
 
 import com.battcn.swagger.properties.ApiDataType;
 import com.battcn.swagger.properties.ApiParamType;
+import com.gysoft.springboothello.com.gysoft.annotation.LocalLock;
 import com.gysoft.springboothello.com.gysoft.pojo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -71,6 +72,12 @@ public    UserController(JdbcTemplate  jdbcTemplate){
         // 根据主键ID修改用户信息
         String sql = "UPDATE t_user SET username = ? ,password = ? WHERE id = ?";
         return jdbcTemplate.update(sql, user.getUsername(), user.getPassword(), id);
+    }
+
+    @LocalLock(key = "user:arg[0]")
+    @GetMapping("query")
+    public String query(@RequestParam String token) {
+        return "success - " + token;
     }
 
 }

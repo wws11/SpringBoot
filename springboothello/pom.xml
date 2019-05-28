@@ -59,25 +59,35 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
         </dependency>
-
+        <!-- 这个swagger是别人再次封装的开源的，很好用-->
         <dependency>
             <groupId>com.battcn</groupId>
             <artifactId>swagger-spring-boot-starter</artifactId>
             <version>1.4.5-RELEASE</version>
         </dependency>
         <!-- swagger -->
-     <!--   <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.5.0</version>
-        </dependency>
-        &lt;!&ndash; swagger-ui &ndash;&gt;
+        <!--   <dependency>
+               <groupId>io.springfox</groupId>
+               <artifactId>springfox-swagger2</artifactId>
+               <version>2.5.0</version>
+           </dependency>
+           &lt;!&ndash; swagger-ui &ndash;&gt;
+           <dependency>
+               <groupId>io.springfox</groupId>
+               <artifactId>springfox-swagger-ui</artifactId>
+               <version>2.5.0</version>
+           </dependency>
+   -->
+        <!--引入aop,guava依赖测试表单防重复提交 -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.5.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
--->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
+        </dependency>
     </dependencies>
 
     <build>
